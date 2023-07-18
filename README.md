@@ -32,40 +32,29 @@
 - Create a new bucket by clicking on the "Create bucket" button.
 - Choose a unique name for your bucket and select the region where you want to create it.
 - Here I have created a bucket with the name 'ritesh-bucket-demo-s3`.
-- On successful creation of bucket, we can the see it as below:
-
-![bucket-name](./assets/bucket-name.png)
+- On successful creation of bucket.
 
 **Step 3: Upload your app files**
 
 - In the S3 bucket, click on the "Upload" button and select all the files from your React app's `build` folder.
 - Ensure that you include the index.html file and other necessary assets.
-- Upload the files to your bucket.\
-  ![upload-files](./assets/upload-files.png)
-
-- On uploading the files, we can see it as below:\
-  ![see-uploaded-files](./assets/see-uploaded-files.png)
+- Upload the files to your bucket.
 
 **Step 4: Set bucket permissions**
 
 - Go to `Permissions` and edit `Block public access`.
-- Here we have to uncheck the "Block all public access" entity to grant public read access to the files so that they can be accessed by users.\
-  ![bucket-permissions](./assets/bucket-permissions.png)
+- Here we have to uncheck the "Block all public access" entity to grant public read access to the files so that they can be accessed by users.
 
 **Step 5: Create CloudFront Distribution**
 
 - Search for Cloudfront and click on `create distribution`.
-- Choose origin domain and bucket name for the distribution.\
-  ![setup-distribution1](./assets/setup-distribution1.png)
+- Choose origin domain and bucket name for the distribution.
 
-- In the `viewer` section, choose `Redirect HTTP to HTTPS`\
-  ![setup-distribution2](./assets/setup-distribution2.png)
+- In the `viewer` section, choose `Redirect HTTP to HTTPS`
 
-- In the `Web application firewall`, choose `Do not enable security protection`\
-  ![setup-distribution3](./assets/setup-distribution3.png)
+- In the `Web application firewall`, choose `Do not enable security protection`
 
-- Finally generate the distribution and copy the policy.\
-  ![copy-policy](./assets/copy-policy.png)
+- Finally generate the distribution and copy the policy.
 
 **Step 6: Setup custom error responses**
 
@@ -73,20 +62,16 @@
 - By default, CloudFront provides generic error pages for various HTTP error codes.
 - However, with custom error responses, you can replace these default error pages with your own custom error pages or responses.
 - Go to the distribution you created and navigate to the `Error Pages` section.
-- Create custom error responses by selecting the error code and the response page path.\
-  ![create-responses](./assets/create-responses.png)
-- Here I have added the following custom error responses:\
-  ![all-responses](./assets/all-responses.png)
+- Create custom error responses by selecting the error code and the response page path.
+- Here I have added the following custom error responses:
 
 **Step 7: Edit Bucket Policy**
 
 - Go to S3 bucket policy in `Permission` and click on `edit`.
-- Paste the policy that you copied from the distribution.\
-  ![paste-policy](./assets/paste-policy.png)
+- Paste the policy that you copied from the distribution.
 
 **Step 8: Access your deployed app**
 
 - After performing the above steps, once the app is deployed, go to the `general` section in the cloudfront distribution.
 - Here you will find the link under `Distribution domain name`.
-- Copy this link, paste it in any browser and you will be able to access the deployed application hosted with AWS services.\
-  ![access-app](./assets/access-app.png)
+- Copy this link, paste it in any browser and you will be able to access the deployed application hosted with AWS services.
